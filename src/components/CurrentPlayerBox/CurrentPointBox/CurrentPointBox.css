@@ -1,4 +1,4 @@
-.RandomBox {
+.currentPointBox {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -9,10 +9,10 @@
     background-color: hsl(31, 87.7%, 41.6%);
     border-radius: 14px;
   }
-  .RandomBox__title {
+  .currentPointBox__title {
     margin-bottom: 20px;
     text-transform: uppercase;
   }
-  .RandomBox__count {
+  .currentPointBox__count {
     font-size: 30px;
   }

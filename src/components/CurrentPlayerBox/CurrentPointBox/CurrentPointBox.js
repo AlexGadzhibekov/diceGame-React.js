@@ -1,9 +1,9 @@
 import "./CurrentPointBox.css";
 export default function CurrentPointBox({ randomPoint }) {
   return (
-    <div className="RandomBox">
-      <div className="RandomBox__title">current points</div>
-      <div className="RandomBox__count">{randomPoint}</div>
+    <div className="currentPointBox">
+      <div className="currentPointBox__title">current points</div>
+      <div className="currentPointBox__count">{randomPoint}</div>
     </div>
   );
 }

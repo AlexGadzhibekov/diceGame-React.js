@@ -1,5 +1,10 @@
 import Button from "../Button";
-export default function ButtonLeave({ setPlayers, players, setIsDisabled }) {
+export default function ButtonLeave({
+  setPlayers,
+  players,
+  setIsDisabled,
+  isDisabled,
+}) {
   const passTheTurn = () => {
     const newPlayers = [...players];
     newPlayers.forEach((player) => {
@@ -8,7 +13,8 @@ export default function ButtonLeave({ setPlayers, players, setIsDisabled }) {
         if (player.count >= 100) {
           player.winner = true;
           setIsDisabled(true);
-          alert(`Поздравляю ${player.name} с Победой!!`);
+          alert(`${player.name} win!`);
+          return;
         }
       }
       player.randomPoint = 0;
@@ -16,9 +22,5 @@ export default function ButtonLeave({ setPlayers, players, setIsDisabled }) {
     });
     setPlayers(newPlayers);
   };
-  return (
-    <div className="ButtonBox">
-      <Button onClick={passTheTurn} value="Leave" />
-    </div>
-  );
+  return <Button onClick={passTheTurn} value="Leave" isDisabled={isDisabled} />;
 }

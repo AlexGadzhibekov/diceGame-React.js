@@ -1,17 +1,10 @@
 import Button from "../Button";
-export default function ButtonNewGame({
-  setPlayers,
-  setIsDisabled,
-  defaultPlayerSettings,
-}) {
+import { defaultPlayerSettings } from "../../GameBox/GameBox";
+export default function ButtonNewGame({ setPlayers, setIsDisabled }) {
   const newGame = () => {
     console.log(defaultPlayerSettings);
-    setPlayers(defaultPlayerSettings);
+    setPlayers(JSON.parse(JSON.stringify(defaultPlayerSettings)));
     setIsDisabled(false);
   };
-  return (
-    <div className="ButtonBox">
-      <Button onClick={newGame} value={"New Game"} />
-    </div>
-  );
+  return <Button onClick={newGame} value={"New Game"} />;
 }

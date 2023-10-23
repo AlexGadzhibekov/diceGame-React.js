@@ -2,27 +2,28 @@ import { useState } from "react";
 import CurrentPlayerBox from "../CurrentPlayerBox/CurrentPlayerBox";
 import DiceButton from "../Button/DiceButton/DiceButton";
 import "./GameBox.css";
+export const defaultPlayerSettings = [
+  {
+    id: 1,
+    name: "Player 1",
+    turn: true,
+    count: 0,
+    randomPoint: 0,
+    winner: false,
+  },
+  {
+    id: 2,
+    name: "Player 2",
+    turn: false,
+    count: 0,
+    randomPoint: 0,
+    winner: false,
+  },
+];
 export default function Gamebox() {
-  const [players, setPlayers] = useState([
-    {
-      id: 1,
-      name: "Player 1",
-      turn: true,
-      count: 0,
-      randomPoint: 0,
-      winner: false,
-    },
-    {
-      id: 2,
-      name: "Player 2",
-      turn: false,
-      count: 0,
-      randomPoint: 0,
-      winner: false,
-    },
-  ]);
-
-  let defaultPlayerSettings = Object.assign([], players);
+  const [players, setPlayers] = useState(
+    JSON.parse(JSON.stringify(defaultPlayerSettings))
+  );
 
   return (
     <div className="GameBox">
@@ -38,11 +39,7 @@ export default function Gamebox() {
           />
         );
       })}
-      <DiceButton
-        players={players}
-        setPlayers={setPlayers}
-        defaultPlayerSettings={defaultPlayerSettings}
-      />
+      <DiceButton players={players} setPlayers={setPlayers} />
     </div>
   );
 }

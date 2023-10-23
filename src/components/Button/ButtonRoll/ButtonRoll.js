@@ -5,7 +5,7 @@ export default function ButtonRoll({
   players,
   isDisabled,
 }) {
-  const randomGenerateNumber = () => {
+  const handleRoll = () => {
     const newPlayers = [...players];
     const random = Math.trunc(1 + Math.random() * (6 + 1 - 1));
     newPlayers.forEach((player) => {
@@ -21,12 +21,10 @@ export default function ButtonRoll({
     setPlayers(newPlayers);
   };
   return (
-    <div className="ButtonBox">
-      <Button
-        onClick={randomGenerateNumber}
-        isDisabled={isDisabled}
-        value={"Roll the Dice"}
-      />
-    </div>
+    <Button
+      onClick={handleRoll}
+      isDisabled={isDisabled}
+      value={"Roll the Dice"}
+    />
   );
 }
