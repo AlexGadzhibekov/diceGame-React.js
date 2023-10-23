@@ -1,0 +1,9 @@
+.GameBox {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    position: relative;
+    width: 80%;
+    max-height: 100vh;
+    margin: 0 auto;
+    border: 1px solid black;
+  }

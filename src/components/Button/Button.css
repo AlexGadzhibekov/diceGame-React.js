@@ -1,0 +1,10 @@
+.btn {
+    width: max-content;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    color: gray;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
